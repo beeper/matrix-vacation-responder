@@ -6,10 +6,10 @@ in
     buildInputs = [
       go
       olm
-      yq
     ] ++ lib.lists.optional (!forCI) [
       goimports
       gopls
       vgo2nix
+      yq
     ];
   }
