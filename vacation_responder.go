@@ -31,7 +31,7 @@ type VacationResponder struct {
 
 var App VacationResponder
 
-var VERSION = "0.4.0"
+var VERSION = "0.1.0"
 
 func main() {
 	// Arg parsing
