@@ -16,6 +16,11 @@ func HandleMessage(source mautrix.EventSource, event *mevent.Event) {
 		return
 	}
 
+	if len(App.stateStore.GetRoomMembers(event.RoomID)) != 2 {
+		log.Infof("Event %s is not from in a DM, so not going to respond.", event.ID)
+		return
+	}
+
 	now := time.Now()
 	if now.Sub(App.mostRecentSend[event.RoomID]).Minutes() < App.configuration.VacationMessageMinInterval {
 		log.Infof("Already sent a vacation message to %s in the past %f minutes.", event.RoomID, App.configuration.VacationMessageMinInterval)
