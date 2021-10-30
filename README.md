@@ -1,5 +1,8 @@
 # Matrix Vacation Responder
 
+Chat:
+[#matrix-vacation-responder:nevarro.space](https://matrix.to/#/#matrix-vacation-responder:nevarro.space)
+
 The Matrix Vacation Responder bot logs in as you, and responds to all DMs with a
 vacation message.
 
