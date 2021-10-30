@@ -5,15 +5,20 @@ import (
 	"strings"
 
 	log "github.com/sirupsen/logrus"
+	"gopkg.in/yaml.v2"
 )
 
 type Configuration struct {
 	// Authentication settings
-	Homeserver   string
-	Username     string
-	PasswordFile string
+	Homeserver   string `yaml:"homeserver"`
+	Username     string `yaml:"username"`
+	PasswordFile string `yaml:"password_file"`
 
-	VacationMessage string
+	VacationMessage string `yaml:"vacation_message"`
+}
+
+func (c *Configuration) Parse(data []byte) error {
+	return yaml.Unmarshal(data, c)
 }
 
 func (c *Configuration) GetPassword() (string, error) {

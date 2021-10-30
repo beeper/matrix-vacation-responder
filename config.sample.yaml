@@ -1,0 +1,3 @@
+homeserver: https://matrix.example.com
+username: '@vacationbot:example.com'
+password_file: /path/to/password/file

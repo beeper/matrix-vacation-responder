@@ -1,7 +1,8 @@
 bin
-config*.json
-!config.sample.json
+config*.yaml
+!config.sample.yaml
 .direnv
-vacation_responder
+matrix-vacation-responder
+vacation_responder.db
 passwordfile
 accesstokenfile
