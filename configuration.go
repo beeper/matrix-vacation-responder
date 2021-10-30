@@ -14,7 +14,9 @@ type Configuration struct {
 	Username     string `yaml:"username"`
 	PasswordFile string `yaml:"password_file"`
 
-	VacationMessage string `yaml:"vacation_message"`
+	// Bot settings
+	VacationMessage            string  `yaml:"vacation_message"`
+	VacationMessageMinInterval float64 `yaml:"vacation_message_min_interval"`
 }
 
 func (c *Configuration) Parse(data []byte) error {

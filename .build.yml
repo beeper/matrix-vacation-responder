@@ -1,0 +1,26 @@
+image: nixos/unstable
+environment:
+  REPO_NAME: matrix-vacation-responder
+triggers:
+  - action: email
+    condition: failure
+    to: alerts@sumnerevans.com
+artifacts:
+  - matrix-vacation-responder/matrix-vacation-responder
+tasks:
+  - setup: |
+      cd $REPO_NAME
+      echo "cd $REPO_NAME" >> ~/.buildenv
+      nix-shell \
+        --arg forCI true \
+        --run "echo SHELL BUILD COMPLETE"
+
+  - build: |
+      nix-shell \
+        --arg forCI true \
+        --run "go build -v"
+
+  - test: |
+      nix-shell \
+        --arg forCI true \
+        --run "go test -v"

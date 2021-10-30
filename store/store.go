@@ -12,9 +12,7 @@ type StateStore struct {
 }
 
 func NewStateStore(db *sql.DB) *StateStore {
-	return &StateStore{
-		DB: db,
-	}
+	return &StateStore{DB: db}
 }
 
 func (store *StateStore) CreateTables() error {
@@ -48,9 +46,6 @@ func (store *StateStore) CreateTables() error {
 			user_id  VARCHAR(255),
 			PRIMARY KEY (room_id, user_id)
 		)
-		`,
-		`
-		DROP TABLE IF EXISTS user_config_room
 		`,
 	}
 

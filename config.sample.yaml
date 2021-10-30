@@ -1,3 +1,17 @@
+# ===== Matrix Authentication =====
+# The Matrix homeserver to connect to
 homeserver: https://matrix.example.com
-username: '@vacationbot:example.com'
+# The Matrix username to log in as. This should be your account, as the bot
+# will post on your behalf.
+username: "@username:example.com"
+# A file containing the Matrix user password
 password_file: /path/to/password/file
+
+# ===== Bot Settings =====
+# The vacation message to send when a message is sent in a DM room.
+vacation_message: |
+  Hi, I'm on vacation and will be back when I feel like it.
+# The minimum time between vacation responses in minutes. The bot will only
+# respond with the vacation message to a given user once within this time
+# period.
+vacation_message_min_interval: 1440

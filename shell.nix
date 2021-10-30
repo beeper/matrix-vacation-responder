@@ -6,7 +6,7 @@ in
     buildInputs = [
       go
       olm
-      python3Packages.yq
+      yq
     ] ++ lib.lists.optional (!forCI) [
       goimports
       gopls
