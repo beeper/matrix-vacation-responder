@@ -1,3 +1,4 @@
+.envrc.user
 bin
 config*.yaml
 !config.sample.yaml
