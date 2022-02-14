@@ -17,6 +17,7 @@ type Configuration struct {
 	// Bot settings
 	VacationMessage            string  `yaml:"vacation_message"`
 	VacationMessageMinInterval float64 `yaml:"vacation_message_min_interval"`
+	RespondToGroups            bool    `yaml:"respond_to_groups"`
 }
 
 func (c *Configuration) Parse(data []byte) error {

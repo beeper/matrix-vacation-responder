@@ -16,7 +16,7 @@ func HandleMessage(source mautrix.EventSource, event *mevent.Event) {
 		return
 	}
 
-	if len(App.stateStore.GetRoomMembers(event.RoomID)) != 2 {
+	if !App.configuration.RespondToGroups && len(App.stateStore.GetRoomMembers(event.RoomID)) != 2 {
 		log.Infof("Event %s is not from in a DM, so not going to respond.", event.ID)
 		return
 	}
