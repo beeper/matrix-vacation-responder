@@ -16,7 +16,7 @@ import (
 	mevent "maunium.net/go/mautrix/event"
 	mid "maunium.net/go/mautrix/id"
 
-	"gitlab.com/beeper/matrix-vacation-responder/store"
+	"github.com/beeper/matrix-vacation-responder/store"
 )
 
 type VacationResponder struct {

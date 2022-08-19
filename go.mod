@@ -1,4 +1,4 @@
-module gitlab.com/beeper/matrix-vacation-responder
+module github.com/beeper/matrix-vacation-responder
 
 go 1.16
 
